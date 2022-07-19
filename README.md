@@ -8,15 +8,15 @@
 
 # Examples
 
-```
-from SyntheticDataGen.dataset import generateParams
+```python
+from syntheticDataGen.dataset import generateParams
 import matplotlib.pyplot as plt
 import numpy as np
 ```
 
 # Gaussian Mixture
 
-```
+```python
 params0 = generateParams(2,1,[.65,.85],)
 ```
 
@@ -184,11 +184,11 @@ params0 = generateParams(2,1,[.65,.85],)
     0 1 2.2547747161844143
 
 
-```
+```python
 X,y,componentAssignment,XPos,XNeg,componentAssignmentPos,componentAssignmentNeg = params0.dg.pn_data(100000)
 ```
 
-```
+```python
 fig,ax = plt.subplots(2,1,figsize=(4,8),sharex=True)
 binvalsPos, bins, patches = ax[0].hist(X[y.ravel()].ravel(),density=True)
 binvalsNeg,_,_ = ax[0].hist(X[~y.ravel()].ravel(),density=True,alpha=.5,bins=bins)
@@ -209,13 +209,13 @@ ax[1].set_title("posterior distribution")
 ![png](docs/images/output_7_1.png)
 
 
-```
+```python
 from sklearn import metrics
 ```
 
 Overall distribution might not have posterior in the given range; here all the 
 
-```
+```python
 metrics.roc_auc_score(y,params0.dg.pn_posterior(X))
 ```
 
@@ -228,7 +228,7 @@ metrics.roc_auc_score(y,params0.dg.pn_posterior(X))
 
 The posterior distribution will result in an AUC in the specified range when evaluated on each component
 
-```
+```python
 for k in np.unique(componentAssignment).astype(int):
     Xk,yk = X[componentAssignment==k],y[componentAssignment==k]
     plt.hist(Xk[yk],density=True)
@@ -249,7 +249,7 @@ for k in np.unique(componentAssignment).astype(int):
 
 Generate a dataset comprised of 3 clusters in 2 dimensions each with an AUC in the range $[.6, .8]$
 
-```
+```python
 params1 = generateParams(3,2,[.6,.8],)
 ```
 
@@ -296,7 +296,7 @@ params1 = generateParams(3,2,[.6,.8],)
     0 1 3.4530778573558436
 
 
-```
+```python
 params1.plotCIEllipse()
 ```
 
@@ -304,11 +304,11 @@ params1.plotCIEllipse()
 ![png](docs/images/output_16_0.png)
 
 
-```
+```python
 results2D = params1.dg.pn_data(5000)
 ```
 
-```
+```python
 [r.shape for r in results2D]
 ```
 
@@ -321,7 +321,7 @@ results2D = params1.dg.pn_data(5000)
 
 positive class conditional distribution weights
 
-```
+```python
 params1.dg.dist_p.mixProp
 ```
 
@@ -334,7 +334,7 @@ params1.dg.dist_p.mixProp
 
 negative class conditional distribution weights
 
-```
+```python
 params1.dg.dist_n.mixProp
 ```
 
@@ -345,7 +345,7 @@ params1.dg.dist_n.mixProp
 
 
 
-```
+```python
 plt.scatter(*results2D[0][results2D[1].ravel()].T)
 plt.scatter(*results2D[0][~results2D[1].ravel()].T,alpha=.5)
 ```

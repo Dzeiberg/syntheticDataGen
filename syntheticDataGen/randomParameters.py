@@ -10,9 +10,9 @@ from sklearn.datasets import make_spd_matrix as spd
 from sklearn import metrics
 import matplotlib.pyplot as plt
 from types import SimpleNamespace as SN
-from SyntheticDataGen import dataGenerators as dgs
+from syntheticDataGen import dataGenerators as dgs
 from itertools import combinations
-from SyntheticDataGen.plots import CIEllipse
+from .plots import CIEllipse
 from matplotlib.patches import Ellipse
 class NormalMixPNParameters:
     """

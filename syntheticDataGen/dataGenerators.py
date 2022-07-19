@@ -5,7 +5,7 @@ __all__ = ['DataGenerator', 'GaussianDG', 'UniformDG', 'NormalMixDG', 'MVNormalM
 # Cell
 import scipy.stats as ss
 import numpy as np
-from SyntheticDataGen.mixture import Mixture
+from .mixture import Mixture
 
 class DataGenerator:
     """

@@ -4,7 +4,7 @@ __all__ = ['GaussianMixtureDataGenerator', 'createMixture', 'pointsBetween', 'my
            'jitterMixtures', 'getConflictingPairs', 'jitterComponents', 'generateParams']
 
 # Cell
-from SyntheticDataGen.randomParameters import NormalMixPNParameters2 as NMixPar
+from .randomParameters import NormalMixPNParameters2 as NMixPar
 
 def GaussianMixtureDataGenerator(dim, n_comps, aucpn_range,irreducibility_params,timeoutMins=1,nTimeouts=5):
     #setting the thrid entry of irreducibility_params to False enforces pairwise mutual irreducibility
@@ -22,7 +22,7 @@ def GaussianMixtureDataGenerator(dim, n_comps, aucpn_range,irreducibility_params
     return NMix, dg
 
 # Cell
-from SyntheticDataGen.mixture import Mixture
+from .mixture import Mixture
 
 def createMixture(NMix,cluster_num):
     gamma = NMix.alpha * NMix.p_pos[cluster_num] + (1 - NMix.alpha) * NMix.p_neg[cluster_num]
