@@ -2,9 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"Mixture": "01_Mixture_Distribution.ipynb"}
 
-modules = []
+modules = ["mixture.py"]
 
 doc_url = "https://Dzeiberg.github.io/syntheticDataGen/"
 

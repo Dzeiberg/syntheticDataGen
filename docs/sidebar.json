@@ -1,6 +1,11 @@
 {
-  "syntheticDataGen": {
+  "SyntheticDataGen": {
     "Overview": "/",
-    "module name here": "core.html"
+    "module name here": "core.html",
+    "Mixture Distribution": "Mixture_Distribution.html",
+    "Data Generators": "DataGenerators.html",
+    "Random Parameters": "Random_Parameters.html",
+    "Plot Utilities": "Plots.html",
+    "Dataset Generator": "Dataset.html"
   }
 }

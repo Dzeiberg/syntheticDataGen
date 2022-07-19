@@ -12,7 +12,22 @@ entries:
     - output: web,pdf
       title: module name here
       url: core.html
+    - output: web,pdf
+      title: Mixture Distribution
+      url: Mixture_Distribution.html
+    - output: web,pdf
+      title: Data Generators
+      url: DataGenerators.html
+    - output: web,pdf
+      title: Random Parameters
+      url: Random_Parameters.html
+    - output: web,pdf
+      title: Plot Utilities
+      url: Plots.html
+    - output: web,pdf
+      title: Dataset Generator
+      url: Dataset.html
     output: web
-    title: syntheticDataGen
+    title: SyntheticDataGen
   output: web
   title: Sidebar
