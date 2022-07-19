@@ -28,6 +28,6 @@ entries:
       title: Dataset Generator
       url: Dataset.html
     output: web
-    title: SyntheticDataGen
+    title: syntheticDataGen
   output: web
   title: Sidebar

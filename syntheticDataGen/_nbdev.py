@@ -2,9 +2,32 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"Mixture": "01_Mixture_Distribution.ipynb"}
+index = {"Mixture": "01_Mixture_Distribution.ipynb",
+         "DataGenerator": "02_DataGenerators.ipynb",
+         "GaussianDG": "02_DataGenerators.ipynb",
+         "UniformDG": "02_DataGenerators.ipynb",
+         "NormalMixDG": "02_DataGenerators.ipynb",
+         "MVNormalMixDG": "02_DataGenerators.ipynb",
+         "NormalMixPNParameters": "03_Random_Parameters.ipynb",
+         "NormalMixPNParameters2": "03_Random_Parameters.ipynb",
+         "AUCFromDistributions": "03_Random_Parameters.ipynb",
+         "CIEllipse": "04_Plots.ipynb",
+         "CIEllipse_data": "04_Plots.ipynb",
+         "GaussianMixtureDataGenerator": "05_Dataset.ipynb",
+         "createMixture": "05_Dataset.ipynb",
+         "pointsBetween": "05_Dataset.ipynb",
+         "mycdf": "05_Dataset.ipynb",
+         "clustersConflict": "05_Dataset.ipynb",
+         "jitterMixtures": "05_Dataset.ipynb",
+         "getConflictingPairs": "05_Dataset.ipynb",
+         "jitterComponents": "05_Dataset.ipynb",
+         "generateParams": "05_Dataset.ipynb"}
 
-modules = ["mixture.py"]
+modules = ["mixture.py",
+           "dataGenerators.py",
+           "randomParameters.py",
+           "plots.py",
+           "dataset.py"]
 
 doc_url = "https://Dzeiberg.github.io/syntheticDataGen/"
 

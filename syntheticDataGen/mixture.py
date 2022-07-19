@@ -17,11 +17,9 @@ class Mixture:
         - mixing_proportion : np.ndarray : mixture weights
         """
         assert len(components) == len(mixing_proportion), "Number of components must match that implied by the mixing proportions"
-        assert np.array(mixing_proportion).sum() == 1, "mixing proportions must add up to 1"
+        assert np.allclose(mixing_proportion.sum(),1), f"mixing proportions must add up to 1, sum is {mixing_proportion.sum()}"
         self.comps = components
         self.mixProp = mixing_proportion
-
-        self.mean = np.dot(self.mixProp,[c.mean() for c in self.comps])
 
     def pdf(self, x):
         return np.sum((p * comp.pdf(x) for (comp, p) in zip(self.comps, self.mixProp)), axis=1)
@@ -45,6 +43,14 @@ class Mixture:
                 rvs = rvs.reshape((np.size(rvs), 1))
             x = np.concatenate((x, rvs), axis=0)
         return x
+
+    @property
+    def mean(self):
+        try:
+            m = [c.mean() for c in self.comps]
+        except TypeError:
+            m = [c.mean for c in self.comps]
+        return np.dot(self.mixProp,m)
 
     def rvsCompInfo(self, size):
         sizes = np.cast['int32'](np.floor(size * self.mixProp))
